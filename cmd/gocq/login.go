@@ -46,11 +46,7 @@ func readLineTimeout(t time.Duration, de string) (str string) {
 }
 
 func readIfTTY(de string) (str string) {
-	if isatty.Isatty(os.Stdin.Fd()) {
 		return readLine()
-	}
-	log.Warnf("未检测到输入终端，自动选择%s.", de)
-	return de
 }
 
 var cli *client.QQClient
